@@ -7,6 +7,10 @@ import { ISidepanel } from '@/pages/utils/sidepanel/types';
 import UserFormSendMessageWrapper from '@/pages/user/userSearch/form/UserFormSendMessageWrapper';
 import BaseFormCreateWrapper from '@/pages/base/form/BaseFormCreateWrapper';
 import BaseFormEditWrapper from '@/pages/base/form/BaseFormEditWrapper';
+
+import QuestionFormEditWrapper from '@/pages/question/form/QuestionFormEditWrapper';
+import QuestionFormCreateWrapper from '@/pages/question/form/QuestionFormCreateWrapper';
+
 interface IProps extends ISidepanel {
   Sidepanel: ISidepanel;
   close: () => void;
@@ -21,6 +25,9 @@ const Sidepanel = (props: IProps) => {
   const components: any = {
     BaseFormCreate: <BaseFormCreateWrapper />,
     BaseFormEdit: <BaseFormEditWrapper />,
+
+    QuestionFormCreate: <QuestionFormCreateWrapper />,
+    QuestionFormEdit: <QuestionFormEditWrapper />,
 
     UsersFormDelete: <UsersFormDeleteWrapper />,
     UserFormSendMessage: <UserFormSendMessageWrapper />,

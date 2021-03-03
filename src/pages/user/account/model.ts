@@ -60,10 +60,6 @@ const UserModel: UserModelType = {
         const emailConfirmed = get(userAuthResult, 'payload.emailConfirmation.confirmed');
         const companyAccount = get(userAuthResult, 'payload.companyAccount');
 
-        if (!companyAccount && !emailConfirmed) {
-          history.push('/wizard');
-        }
-
         if (userAuthResult) {
           yield put({
             type: 'save',

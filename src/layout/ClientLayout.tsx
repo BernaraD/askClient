@@ -3,7 +3,7 @@ import { Badge, Button, Col, Menu, Row, Affix } from 'antd';
 import { connect, Link } from 'umi';
 import { get } from 'lodash';
 import { ISidepanel } from '@/pages/utils/sidepanel/types';
-import { IClient } from '@/pages/client/types';
+// import { IClient } from '@/pages/client/types';
 import { Anchor } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 
@@ -14,7 +14,7 @@ interface IProps {
   open: (arg: ISidepanel) => void;
   callClient: (arg: ICallClient) => void;
   hangUpCall: () => void;
-  ClientInfo: IClient;
+  // ClientInfo: IClient;
 }
 
 interface ICallClient {
@@ -27,11 +27,6 @@ const ClientLayout = (props: IProps) => {
   const tab = get(props, 'location.pathname', '').split('/').pop();
   const clientName = get(props, 'ClientInfo.name');
   const addressesCount = get(props, 'ClientInfo.addresses.length');
-  const ordersCount = get(props, 'ClientInfo.orders.length');
-  const invoicesCount = get(props, 'ClientInfo.invoices.length');
-  const estimatesCount = get(props, 'ClientInfo.estimates.length');
-  const paymentsCount = get(props, 'ClientInfo.payments.length');
-  const messagesCount = get(props, 'ClientInfo.messages.length');
 
   //
   const callsCount = get(props, 'ClientInfo.calls.length', '');
@@ -107,8 +102,6 @@ const ClientLayout = (props: IProps) => {
     props.hangUpCall();
   };
 
-  if (!props.ClientInfo) return null;
-
   return (
     <>
       <div className="row">
@@ -135,31 +128,6 @@ const ClientLayout = (props: IProps) => {
                 <div key="addresses" className="d-flex align-items-center">
                   <Anchor.Link href="#addresses" title="Addresses" />
                   <Badge count={addressesCount} />
-                </div>
-
-                <div key="estimates" className="d-flex align-items-center">
-                  <Anchor.Link href="#estimates" title="Estimates" />
-                  <Badge count={estimatesCount} />
-                </div>
-
-                <div key="orders" className="d-flex align-items-center">
-                  <Anchor.Link href="#orders" title="Orders" />
-                  <Badge count={ordersCount} />
-                </div>
-
-                <div key="invoices" className="d-flex align-items-center">
-                  <Anchor.Link href="#invoices" title="Invoices" />
-                  <Badge count={invoicesCount} />
-                </div>
-
-                <div key="payments" className="d-flex align-items-center">
-                  <Anchor.Link href="#payments" title="Payments" />
-                  <Badge count={paymentsCount} />
-                </div>
-
-                <div key="messages" className="d-flex align-items-center">
-                  <Anchor.Link href="#messages" title="Messages" />
-                  <Badge count={messagesCount} />
                 </div>
 
                 <div key="calls" className="d-flex align-items-center">

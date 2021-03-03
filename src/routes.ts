@@ -27,6 +27,8 @@ export default [
           { path: '/base', component: '@/pages/base/dashboard/BaseDashboard' },
           { path: '/base/:baseId', component: '@/pages/base/view/BaseView' },
 
+          { path: '/question', component: '@/pages/question/dashboard/QuestionDashboard' },
+          { path: '/question/:questionId', component: '@/pages/question/view/QuestionView' },
 
           // *****  ====================================
           { path: '/users', component: '@/pages/user/userSearch/UsersDashboard' },
