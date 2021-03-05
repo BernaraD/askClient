@@ -22,16 +22,29 @@ const QuestionSearchList = (props: IProps) => {
       key: 'name',
       render: (row) => <Link to={`/question/${row._id}`}>{row.name}</Link>,
     },
+
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
+    },
+
+    {
+      title: 'Law Practice',
+      dataIndex: 'practice',
+      key: 'practice',
+    },
+
+    {
+      title: 'Telephone',
+      dataIndex: 'telephone',
+      key: 'telephone',
+    },
+
     {
       title: 'Notes',
       dataIndex: 'notes',
       key: 'notes',
-    },
-
-    {
-      title: 'email',
-      dataIndex: 'email',
-      key: 'email',
     },
     {
       title: 'Action',
