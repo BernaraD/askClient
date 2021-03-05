@@ -29,12 +29,13 @@ const QuestionSearchList = (props: IProps) => {
       key: 'email',
     },
 
+    //вот эту строчку надо хорошо понять !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
       title: 'Law Practice',
-      dataIndex: 'practice',
+      render: (row) => <Link to={`/practice/${row._id}`}>{get(row, 'practice.practice')}</Link>,
       key: 'practice',
     },
-
+    //..********************************************************************************
     {
       title: 'Telephone',
       dataIndex: 'telephone',
