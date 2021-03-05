@@ -2,6 +2,8 @@ import { Effect, history, Reducer } from 'umi';
 
 import { queryQuestionCreate, queryQuestionGetById, queryQuestionUpdateById } from '@/pages/question/queries';
 import defaultReducers from '@/utils/defaultReducers';
+import { queryPracticeSearch } from '@/pages/practice/queries';
+import { get } from 'lodash';
 
 export interface IState {}
 
@@ -13,6 +15,7 @@ export interface QuestionModelType {
     getById: Effect;
     updateById: Effect;
     reset: Effect;
+    practiceSearch: Effect;
   };
   reducers: {
     save: Reducer<IState>;
@@ -44,6 +47,17 @@ const QuestionModel: QuestionModelType = {
       yield call(queryQuestionUpdateById, payload);
       yield put({ type: 'Sidepanel/close' });
       yield put({ type: 'QuestionDashboard/questionSearch', payload: payload.queryParams });
+    },
+
+    *practiceSearch({ payload }, { call, put }) {
+      const data = yield call(queryPracticeSearch, payload);
+      yield put({
+        type: 'save',
+        payload: {
+          practiceList: get(data, 'payload.items'),
+          practicePager: get(data, 'payload.pager'),
+        },
+      });
     },
 
     *reset(_, { put }) {

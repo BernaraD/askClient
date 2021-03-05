@@ -30,6 +30,12 @@ export default [
           { path: '/question', component: '@/pages/question/dashboard/QuestionDashboard' },
           { path: '/question/:questionId', component: '@/pages/question/view/QuestionView' },
 
+          { path: '/answer', component: '@/pages/answer/dashboard/AnswerDashboard' },
+          { path: '/answer/:answerId', component: '@/pages/answer/view/AnswerView' },
+
+          { path: '/practice', component: '@/pages/practice/dashboard/PracticeDashboard' },
+          { path: '/practice/:practiceId', component: '@/pages/practice/view/PracticeView' },
+
           // *****  ====================================
           { path: '/users', component: '@/pages/user/userSearch/UsersDashboard' },
           { path: '/contact', component: '@/pages/pages/ContactPage' },

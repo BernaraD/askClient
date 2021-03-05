@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Input, Select } from 'antd';
+import { Button, DatePicker, Form, Input, Select } from 'antd';
 import validator from '@/utils/validators';
 import { IQuestion } from '@/pages/question/types';
 import { get } from 'lodash';
@@ -17,21 +17,36 @@ const QuestionForm = (props: IProps) => {
   const isLoading = get(props, 'isLoading', false);
 
   return (
-    <Form onFinish={props.onFinish} initialValues={props.initialValues}>
-      <Form.Item name="name" rules={[validator.require]}>
-        <Input placeholder="Question Name" />
+    <Form onFinish={props.onFinish} initialValues={props.initialValues} layout="vertical">
+      <Form.Item name="name" label="Name" rules={[validator.require]}>
+        <Input />
       </Form.Item>
 
-      <Form.Item name="description">
-        <Input.TextArea placeholder="Question Description" autoSize={{ minRows: 3, maxRows: 6 }} />
+      <Form.Item name="question" label="Question">
+        <Input />
       </Form.Item>
 
-      {/*<Form.Item name="accessType" rules={[validator.require]}>*/}
-      {/*  <Select placeholder="Access type">*/}
-      {/*    <Option value="members">Members</Option>*/}
-      {/*    <Option value="all">All</Option>*/}
-      {/*  </Select>*/}
-      {/*</Form.Item>*/}
+      <Form.Item name="telephone" label="telephone" rules={[validator.require]}>
+        <Input />
+      </Form.Item>
+
+      <Form.Item name="email" label="Email" rules={[validator.require]}>
+        <Input />
+      </Form.Item>
+
+      <Form.Item name="notes" label="Notes">
+        <Input.TextArea autoSize={{ minRows: 3, maxRows: 6 }} />
+      </Form.Item>
+
+      <Form.Item name="practice" rules={[validator.require]}>
+        <Select placeholder="Practice">
+          {props.practiceList.map((el) => (
+            <Option value={el._id} key={el._id}>
+              {el.practice}
+            </Option>
+          ))}
+        </Select>
+      </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" loading={isLoading}>

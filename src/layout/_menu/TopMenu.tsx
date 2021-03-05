@@ -26,9 +26,10 @@ const TopMenu = (props: IProps) => {
 
   const mainMenu = [
     { path: '/question', name: 'Question', perm: 'question.get.own' },
+    { path: '/answer', name: 'Answer', perm: 'answer.get.own' },
     { path: '/base', name: 'Base', perm: 'base.get.own' },
     { path: '/client', name: 'Clients', perm: 'client.get.own' },
-    // { path: '/answer', name: 'Answer', perm: 'answer.get.own' },
+    { path: '/practice', name: 'Practice', perm: 'practice.get.own' },
   ].map((el) => ({
     ...el,
     isActive: location.startsWith(el.path),

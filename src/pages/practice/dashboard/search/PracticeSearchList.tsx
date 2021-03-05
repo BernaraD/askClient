@@ -5,34 +5,24 @@ import { ColumnProps } from 'antd/es/table';
 import { connect, Link, withRouter } from 'umi';
 import { RouteComponentProps } from 'react-router-dom';
 
-import { IQuestion } from '@/pages/question/types';
-import ActionMenu from '@/pages/question/dashboard/search/ActionMenu';
+import { IPractice } from '@/pages/practice/types';
+import ActionMenu from '@/pages/practice/dashboard/search/ActionMenu';
 
 interface IProps extends RouteComponentProps {
-  items: IQuestion[];
+  items: IPractice[];
 }
 
-const QuestionSearchList = (props: IProps) => {
+const PracticeSearchList = (props: IProps) => {
   const queryParams = get(props, 'location.query', {});
   const items = get(props, 'items', []);
 
-  const columns: ColumnProps<IQuestion>[] = [
+  const columns: ColumnProps<IPractice>[] = [
     {
-      title: 'Name',
-      key: 'name',
-      render: (row) => <Link to={`/question/${row._id}`}>{row.name}</Link>,
-    },
-    {
-      title: 'Notes',
-      dataIndex: 'notes',
-      key: 'notes',
+      title: 'Practice name',
+      key: 'practice',
+      render: (row) => <Link to={`/practice/${row._id}`}>{row.practice}</Link>,
     },
 
-    {
-      title: 'email',
-      dataIndex: 'email',
-      key: 'email',
-    },
     {
       title: 'Action',
       key: 'action',
@@ -60,4 +50,4 @@ const mapStateToProps = () => ({});
 //dispatch: any
 const mapDispatchToProps = () => ({});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(QuestionSearchList));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PracticeSearchList));

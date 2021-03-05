@@ -39,6 +39,7 @@ const QuestionFormEditWrapper = (props: IProps) => {
       initialValues={props.questionInfo}
       submitButtonText="Update"
       isLoading={isLoadingUpdate}
+      practiceList={practiceList}
     />
   );
 };
