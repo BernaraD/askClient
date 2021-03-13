@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidepanel from '@/pages/utils/sidepanel/Sidepanel';
 import Footer from '@/layout/Footer';
-import Navbar from '@/layout/Navbar';
+import Navbar from '@/layout/_menu/Navbar/Navbar';
 
 interface IProps {
   children: any;
