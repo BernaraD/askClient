@@ -2,9 +2,14 @@ import React from 'react';
 import { connect, Link } from 'umi';
 import prof from '@/pages/pages/homePage/images/prof.png';
 import './HomePage.css';
-import img2 from '@/pages/pages/homePage/images/homePageIllustration2.png';
+import teacher from '@/pages/pages/homePage/images/teacher.png';
+import lawyer from '@/pages/pages/homePage/images/lawyerImg.png';
+import doctor from '@/pages/pages/homePage/images/doctor.png';
+// @ts-ignore
+import betty from '@/pages/pages/homePage/images/testimonials/betty.jpg';
 import { get } from 'lodash';
 import { IUserAccount } from '@/pages/user/userSearch/types';
+import { Carousel } from 'antd';
 
 interface IProps {
   Account: IUserAccount;
@@ -14,10 +19,6 @@ function HomePage(props: IProps) {
   const isUserAuth = get(props, 'Account._id');
 
   return (
-    // <div className="container mt-5 mb-5">
-    //   <div className="row">
-    //     <div className="col-lg-6">
-
     <div className="container">
       <div className="row">
         <div>
@@ -39,64 +40,96 @@ function HomePage(props: IProps) {
         </div>
       </div>
 
-      <div className="search-form">
-        <div className="ant-col-lg-6 ant-col-sm-2 column">
-          <input type="text" className="" placeholder="Legal Issue or Lawyer Name" />
-        </div>
+      <div className="container cards">
+        <div className="row">
+          <div className="col-sm">
+            <div className="card width: 18rem">
+              <img src={lawyer} className="card-img-top card-img" alt="lawyer-img" />
+              <div className="card-body">
+                <h5 className="card-title">Lawyers</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <a href="#" className="btn btn-primary">
+                  Go somewhere
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <div className="ant-col-lg-6 ant-col-sm-2 column">
-          <input type="text" className="" placeholder="Legal Issue or Lawyer Name" />
-        </div>
+          <div className="col-sm">
+            <div className="card width: 18rem">
+              <img src={teacher} className="card-img-top card-img" alt="teacher" />
+              <div className="card-body">
+                <h5 className="card-title">Teachers</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <a href="#" className="btn btn-primary">
+                  Go somewhere
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <div className="ant-col-lg-6 ant-col-sm-2 column">
-          <input type="text" className="" placeholder="Legal Issue or Lawyer Name" />
+          <div className="col-sm">
+            <div className="card width: 18rem">
+              <img src={doctor} className="card-img-top card-img" alt="doctor" />
+              <div className="card-body">
+                <h5 className="card-title">Doctors</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <a href="#" className="btn btn-primary">
+                  Go somewhere
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/*<div className="row">*/}
-      {/*  <div className="row mt-5">*/}
-      {/*    <div className="col-lg-7">*/}
-      {/*      <div className="mt-5 mb-5">*/}
-      {/*        <h3>Clients</h3>*/}
-      {/*        <p>Organize your client and vendor lists and keep a single accurate version for each contact.</p>*/}
-      {/*      </div>*/}
+      {/*Testimonials*/}
+      <div id="testimonials">
+        <div id="testimonial-carousel" className="carousel slide" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active carousel-layout">
+              <h2 className="testimonial-text">
+                I had the best trip ever to skiing, so easy, no hidden fees. tripPlanner made my vacation special
+              </h2>
+              <img className="testimonial-image" src={betty} alt="betty-profile" />
+              <em>Ally, Turkey</em>
+            </div>
 
-      {/*<div className="mt-5 mb-5">*/}
-      {/*  <h3>Estimates, Invoices, Payments</h3>*/}
-      {/*  <p>*/}
-      {/*    No more wasting your time filling out the same information. Turn estimates into invoices, invoices into*/}
-      {/*    payments with a click of a button. Create more revenue by working efficiently.*/}
-      {/*  </p>*/}
-      {/*</div>*/}
+            <div className="carousel-item carousel-layout">
+              <h2 className="testimonial-text">
+                I booked my trip to Europe through tripPlanner, and made the right choice. Highly recommend!
+              </h2>
+              <img className="testimonial-image" src="images/lady-img.jpg" alt="lady-profile" />
+              <em>Beverly, Chicago</em>
+            </div>
 
-      {/*<div className="mt-5 mb-5">*/}
-      {/*  <h3>Calls and Messages</h3>*/}
-      {/*  <p>*/}
-      {/*    Messages and calls between your team and the client are logged in an integrated chat, so everyone is*/}
-      {/*    instantly updated. No miscommunication, no extra phone calls.*/}
-      {/*  </p>*/}
-      {/*</div>*/}
+            <div className="carousel-item carousel-layout">
+              <h2 className="testimonial-text">
+                I traveled to South Africa with tripPlanner, and was surprised how easy it is. Have many lovely
+                memories. Thank you tripPlanner
+              </h2>
+              <img className="testimonial-image" src="images/betty1.jpg" alt="betty-profile" />
+              <em>Betty, New York</em>
+            </div>
 
-      {/*<div className="mt-5 mb-5">*/}
-      {/*  <h3>Schedule Tasks</h3>*/}
-      {/*  <p>Make scheduling a breeze, never miss a meeting.</p>*/}
-      {/*</div>*/}
-
-      {!isUserAuth && (
-        <div className="mt-4 mb-5">
-          <Link className="ant-btn ant-btn-primary login-form-button" to="/user/register">
-            Start today
-          </Link>
+            <a className="carousel-control-prev" href="" role="button" data-bs-slide="prev">
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Previous</span>
+            </a>
+            <a className="carousel-control-next" href="#" role="button" data-bs-slide="next">
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Next</span>
+            </a>
+          </div>
         </div>
-      )}
+      </div>
     </div>
-
-    //     <div className="col-lg-5">
-    //       <img src={img2} className="align-content-center w-100" alt="ClientBase " title="ClientBase " />
-    //     </div>
-    //   </div>
-    // </div>
-    // </div>
   );
 }
 

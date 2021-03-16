@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'umi';
+import './Footer.css';
+import '@fortawesome/react-fontawesome';
 
 const menu = [
   { link: '/contact', text: 'Contact' },
@@ -11,13 +13,17 @@ const menu = [
 
 const Footer = () => {
   return (
-    <footer className="mt-auto small d-flex">
-      {menu.map((el) => (
-        <Link key={el.link} to={el.link} className="me-2 small">
-          {el.text}
-        </Link>
-      ))}
-    </footer>
+    <div className="footer">
+      <footer className="footer-menu-items">
+        {menu.map((el) => (
+          <Link key={el.link} to={el.link} className="me-2 ">
+            {el.text}
+          </Link>
+        ))}
+      </footer>
+
+      <p>© Copyright 2021 Ask</p>
+    </div>
   );
 };
 

@@ -28,3 +28,63 @@
   top: 0;
   z-index: 0;
 }
+
+.search-form {
+  justify-self: center;
+  background-color: red;
+  width: 60%;
+  hight: 5rem;
+}
+
+.carousel-layout {
+  padding: 4% 15%;
+
+}
+
+.card-style {
+  justify-content: center;
+}
+
+.cards {
+  padding-bottom: 15% ;
+  max-width: 1222px;
+}
+
+.card-img {
+  height: 220px;
+}
+
+.contentStyle {
+  padding-top: 10rem;
+  height: 450px;
+  color: #fff;
+  lineHeight: 160px;
+  textAlign: center;
+  background: aliceblue;
+}
+
+#testimonials {
+  text-align: center;
+  background-color: #ef8172;
+  color: white;
+  padding-bottom: 10rem;
+  height: 450px;
+}
+
+.testimonial-text {
+  font-family: Montserrat;
+  font-size: 3rem;
+  color: #ffffff;
+  /*line-height: 1.5rem;*/
+}
+
+.testimonial-image {
+  border-radius: 100%;
+  margin: 20px;
+  width: 10%;
+}
+
+
+.carousel {
+
+}

@@ -11,7 +11,7 @@ export default ({ children }: IProps) => {
     <>
       <Row align="middle">
         <Link to="/" className="site-name">
-          ClientBase
+          Ask
         </Link>
       </Row>
 
