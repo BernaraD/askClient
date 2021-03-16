@@ -48,7 +48,7 @@ function HomePage(props: IProps) {
               <div className="card-body">
                 <h5 className="card-title">Lawyers</h5>
                 <p className="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                 </p>
                 <a href="#" className="btn btn-primary">
                   Go somewhere
@@ -95,7 +95,7 @@ function HomePage(props: IProps) {
           <div className="carousel-inner">
             <div className="carousel-item active carousel-layout">
               <h2 className="testimonial-text">
-                I had the best trip ever to skiing, so easy, no hidden fees. tripPlanner made my vacation special
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
               </h2>
               <img className="testimonial-image" src={betty} alt="betty-profile" />
               <em>Ally, Turkey</em>
@@ -103,7 +103,7 @@ function HomePage(props: IProps) {
 
             <div className="carousel-item carousel-layout">
               <h2 className="testimonial-text">
-                I booked my trip to Europe through tripPlanner, and made the right choice. Highly recommend!
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
               </h2>
               <img className="testimonial-image" src="images/lady-img.jpg" alt="lady-profile" />
               <em>Beverly, Chicago</em>
@@ -111,8 +111,7 @@ function HomePage(props: IProps) {
 
             <div className="carousel-item carousel-layout">
               <h2 className="testimonial-text">
-                I traveled to South Africa with tripPlanner, and was surprised how easy it is. Have many lovely
-                memories. Thank you tripPlanner
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
               </h2>
               <img className="testimonial-image" src="images/betty1.jpg" alt="betty-profile" />
               <em>Betty, New York</em>

@@ -22,31 +22,31 @@ const QuestionSearchList = (props: IProps) => {
       key: 'name',
       render: (row) => <Link to={`/question/${row._id}`}>{row.name}</Link>,
     },
-
-    {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-    },
+    //
+    // {
+    //   title: 'Email',
+    //   dataIndex: 'email',
+    //   key: 'email',
+    // },
 
     //вот эту строчку надо хорошо понять !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    {
-      title: 'Law Practice',
-      render: (row) => <Link to={`/practice/${row._id}`}>{get(row, 'practice.practice')}</Link>,
-      key: 'practice',
-    },
-    //..********************************************************************************
-    {
-      title: 'Telephone',
-      dataIndex: 'telephone',
-      key: 'telephone',
-    },
-
-    {
-      title: 'Notes',
-      dataIndex: 'notes',
-      key: 'notes',
-    },
+    //   {
+    //     title: 'Law Practice',
+    //     render: (row) => <Link to={`/practice/${row._id}`}>{get(row, 'practice.practice')}</Link>,
+    //     key: 'practice',
+    //   },
+    //   //..********************************************************************************
+    //   {
+    //     title: 'Telephone',
+    //     dataIndex: 'telephone',
+    //     key: 'telephone',
+    //   },
+    //
+    //   {
+    //     title: 'Notes',
+    //     dataIndex: 'notes',
+    //     key: 'notes',
+    //   },
     {
       title: 'Action',
       key: 'action',
